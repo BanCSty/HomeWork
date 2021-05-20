@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+
+namespace Obolonskih_WORK
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            List<object> g = new List<object> {1,-2,"DWAD"};
+            foreach (var item in GetIntegersFromList(g))
+            {
+                Console.WriteLine(item);
+            }
+        }
+        public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
+        {
+            //return listOfItems.OfType<int>().Cast<int>();
+            List<int> result = new List<int>();
+            foreach (var item in listOfItems)
+            {
+                if (item is int &&((int)item>=0))
+                {
+                    result.Add((int)item);
+                }
+            }
+            return result;
+
+        }
+    }
+}
+        
+    
+

@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace TEST_FOR_PUBLIC
+{
+    public static class Program
+    {
+
+        static void Main()
+        {
+            Console.WriteLine("Enter integer number");
+            int num = int.Parse(Console.ReadLine());
+            int g = Kata.DescendingOrder(num);
+            Console.WriteLine(g);
+        }
+    }
+    public static class Kata
+    {
+        public static int DescendingOrder(int num)
+        {
+            // Bust a move right here
+            if (num <= 0)
+                return 0;
+            else
+            {
+
+                List<int> listarray = new List<int>();
+                int value = 0;
+                int length = num.ToString().Length;
+
+                while (num > 0)
+                {
+                    listarray.Add(num % 10);
+                    num = num / 10;
+
+                }
+                listarray.Sort();
+                listarray.Reverse();
+
+                for (int count = 0; count < length; count++)
+                    value += listarray[count] * (int)Math.Pow(10, length - count - 1);
+
+                return value;
+            }
+
+
+        }
+    }
+}

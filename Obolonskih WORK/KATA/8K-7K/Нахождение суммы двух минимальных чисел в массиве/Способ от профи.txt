@@ -1,0 +1,6 @@
+    //Нахождение суммы двух наименьших чисел в массиве
+    public static int sumTwoSmallestNumbers(int[] numbers)
+    {
+        
+        return numbers.OrderBy(i => i).Take(2).Sum();
+    }

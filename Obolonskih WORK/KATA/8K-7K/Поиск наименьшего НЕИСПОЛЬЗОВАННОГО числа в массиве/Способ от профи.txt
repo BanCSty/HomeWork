@@ -1,0 +1,31 @@
+using System;
+using System.Linq;
+
+namespace TEST_FOR_PUBLIC
+{
+    public static class Program
+    {
+        public static int NextId(int[] ids)
+        {
+            int i = 0;
+            //Contains Возвращает значение, указывающее, встречается ли указанный символ внутри этой строки, используя указанные правила сравнения.
+            while (ids.Contains(i))
+            {
+                i++;
+            }
+            return i;
+        }
+        static void Main()
+        {
+           
+            int[] first = new int[] { 0, 1, 2, 3, 5 };
+            int[] second = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] third = new int[] {9,9,8};
+            Console.WriteLine(NextId(first)); 
+            Console.WriteLine(NextId(second)); 
+            Console.WriteLine(NextId(third)); 
+        }
+    }
+
+}
+

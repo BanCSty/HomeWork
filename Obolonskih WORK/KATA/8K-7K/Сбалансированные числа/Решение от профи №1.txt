@@ -1,0 +1,7 @@
+public static string BalancedNumber(int number)
+    {
+        double middle = number.ToString().Length / 2.0;
+        var leftSum = number.ToString().Take((int)Math.Ceiling(middle - 1)).Sum(x => x);
+        var rightSum = number.ToString().Skip((int)++middle).Sum(x => x);
+        return leftSum == rightSum ? "Balanced" : "Not Balanced";
+    }

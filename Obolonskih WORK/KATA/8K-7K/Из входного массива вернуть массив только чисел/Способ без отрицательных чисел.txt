@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+
+namespace Obolonskih_WORK
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            List<object> g = new List<object> {1,2,"DWAD"};
+            foreach (var item in asd(g))
+            {
+                Console.WriteLine(item);
+            }
+        }
+        public static IEnumerable<int> asd(List<object> Z)
+        {
+       
+            return Z.OfType<int>();
+        }
+    }
+}
+        
+    
+

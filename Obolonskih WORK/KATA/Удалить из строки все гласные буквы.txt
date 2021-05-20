@@ -1,0 +1,17 @@
+using System;
+using System.Reflection.Metadata;
+using System.Text.RegularExpressions;
+
+public static class Kata
+{
+    public static string Disemvowel(string str)
+    {
+        return Regex.Replace(str, "[euioa]", "", RegexOptions.IgnoreCase); ;
+    }
+    public static void Main()
+    {
+        string text = Console.ReadLine();
+        Disemvowel(text);
+        Console.WriteLine(Disemvowel(text));
+    }
+}

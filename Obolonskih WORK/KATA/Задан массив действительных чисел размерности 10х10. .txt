@@ -1,0 +1,136 @@
+using System;
+using System.IO;
+
+namespace Lesson5
+
+{
+
+    class Program
+    {
+
+        public static void Main()
+        {
+
+            Random rnd = new Random();
+            int[,] gay = new int[11, 11];
+            for (int i = 1; i <= 10; i++)
+            {
+                int var = 0;
+                int F_var = 0;
+                for (int j = 1; j <= 10; j++)
+                {
+
+                    gay[i, j] = rnd.Next(1, 100);
+                    Console.Write("  " + gay[i, j] + "  ");
+                    var += gay[i, j];
+
+                }
+                Console.WriteLine("Сумма строки: " + var);
+
+            }
+            string W = "y";
+            while (W == "y")
+            {
+                Console.WriteLine("Выберете методы \n 1.Сумма элементов n строки. \n 2.Сумма элементов n столбца. \n 3.Сумма элементов n диогонали.");
+                string choice = Console.ReadLine();
+                int _choice = Convert.ToInt32(choice);
+                int F_mod = 0;
+       
+           
+                switch (_choice)
+                {
+                    case 1:
+                        {
+                            start:
+
+                            Console.WriteLine("Укажите номер строки: ");
+                            string number = Console.ReadLine();
+                            int _number = Convert.ToInt32(number);
+                            if (_number < 0 || _number > 10)
+                            {
+                                goto start;
+                            }
+                            // Console.WriteLine("Сумма элементов" + i + "строки: " + value);
+                            for (int y = 0; y <= 10; y++)
+                            {
+                                F_mod += gay[_number, y];
+
+                            }
+                            Console.WriteLine(F_mod);
+                            Console.WriteLine("Хотите продолжить? y/n");
+                            W = Console.ReadLine();
+                            break;
+                        }
+                    case 2:
+                        {
+                            start:
+                            Console.WriteLine("Укажите номер столбца: ");
+                            string number = Console.ReadLine();
+                            int _number = Convert.ToInt32(number);
+                            if (_number < 0 || _number > 10)
+                            {
+                                goto start;
+                            }
+                            // Console.WriteLine("Сумма элементов" + i + "строки: " + value);
+                            for (int y = 0; y <= 10; y++)
+                            {
+                                F_mod += gay[y, 1];
+
+                            }
+                            Console.WriteLine(F_mod);
+                            Console.WriteLine("Хотите продолжить? y/n");
+                            W = Console.ReadLine();
+                            break;
+                        }
+                    case 3:
+                        {
+
+
+                            start:
+                            Console.WriteLine("Укажите сторону диогонали L/R: ");
+                            //string number= Console.ReadLine();
+                            string g = Console.ReadLine();
+                            char d = g[0];
+                            if (d != 'r' && d != 'l')
+                            {
+                                goto start;
+                            }
+                            //Console.WriteLine("Сумма элементов" + i + "строки: " + value);
+                            if (d == 'r')
+                            {
+                                for (int y = 0; y <= 10; y++)
+                                {
+                                    F_mod += gay[y, y++];
+
+                                }
+                                Console.WriteLine(F_mod);
+                                Console.WriteLine("Хотите продолжить? y/n");
+                                W = Console.ReadLine();
+
+                            }
+                            else
+                            if(d== 'l')
+                            {
+                                int j = 10;
+                                for (int y = 1; y <= 10; y++)
+                                {
+                                    
+                                    F_mod += gay[j, y];
+                                    j--;
+
+                                }
+                                Console.WriteLine(F_mod);
+                                Console.WriteLine("Хотите продолжить? y/n");
+                                W = Console.ReadLine();
+                            }
+                            break;
+                        }
+
+                }
+            }
+
+
+        }
+
+    }
+}

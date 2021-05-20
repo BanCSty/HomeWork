@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+namespace TEST_FOR_PUBLIC
+{
+    public static class Program
+    {
+
+        static void Main()
+        {
+            Console.WriteLine("Enter integer number");
+            long num = long.Parse(Console.ReadLine());
+            long g = Kata.DescendingOrder(num);
+            Console.WriteLine(g);
+        }
+    }
+    public static class Kata
+    {
+        public static int DescendingOrder(long num)
+        {
+            char[] arr = num.ToString().ToCharArray();
+            Array.Sort(arr);
+            Array.Reverse(arr);
+            return Convert.ToInt32(new string(arr));
+        }
+    }
+}

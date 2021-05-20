@@ -1,0 +1,32 @@
+using System;
+using System.Linq;
+
+namespace TEST_FOR_PUBLIC
+{
+    public static class Program
+    {
+
+        static void Main()
+        {
+            
+            Kata p = new Kata();
+            p.Health = 5;
+            if(p.CheckAlive()) //Присвоили  хп персонжу равное 5. Проверяем жив ли он. TRUE
+            {
+                Console.WriteLine("Alive");
+            }
+            p.Health = 0;
+            if (!p.CheckAlive()) 
+            {
+                Console.WriteLine("Die");
+            }
+        }
+    }
+    public class Kata
+    {
+        public int Health { get; set; } = 100;
+        public bool CheckAlive() => this.Health > 0;
+
+    }
+}
+

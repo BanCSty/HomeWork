@@ -1,0 +1,10 @@
+using System.Collections.Generic;
+using System.Linq;
+
+public class Remover
+{
+  public static List<int> RemoveSmallest(List<int> numbers)
+  {
+    return numbers.Any() && numbers.Remove(numbers.Min()) ? numbers : new List<int>();
+  }
+}

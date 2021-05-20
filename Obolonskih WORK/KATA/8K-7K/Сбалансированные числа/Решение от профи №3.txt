@@ -1,0 +1,7 @@
+public static string BalancedNumber(int number)
+    {
+        var source = number.ToString();
+        var left = source.Substring(0, (source.Length + 1) / 2 - 1).Sum(x => x - '0');
+        var right = source.Substring(source.Length / 2 + 1).Sum(x => x - '0');
+        return left==right ? "Balanced" : "Not Balanced";
+    }

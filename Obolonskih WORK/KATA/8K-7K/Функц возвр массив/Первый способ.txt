@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+namespace TEST_FOR_PUBLIC
+{
+    public static class Program
+    {
+
+        static void Main()
+        {
+            int[] ar= Kata.Arr(4);
+            foreach (var item in ar)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+    public class Kata
+    {
+        public static int[] Arr(int N)
+        {
+
+            return Enumerable.Range(0,N).ToArray(); //Заполняет массив значениями от 0 до N
+
+        }
+    }
+}

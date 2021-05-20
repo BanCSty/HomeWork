@@ -1,0 +1,25 @@
+using System;
+using System.Linq;
+
+namespace TEST_FOR_PUBLIC
+{
+    public static class Program
+    {
+
+        static void Main()
+        {
+            Console.WriteLine("Enter integer number");
+            int num = int.Parse(Console.ReadLine());
+            int g = Kata.DescendingOrder(num);
+            Console.WriteLine(g);
+        }
+    }
+    public static class Kata
+    {
+        public static int DescendingOrder(int num)
+        {
+            return int.Parse(string.Concat(num.ToString().OrderByDescending(x => x)));
+	   return int.Parse(string.Concat(num.ToString().Where(x => x > 47 && x < 58).OrderByDescending(x => x))); //Для отрицательных чисел
+        }
+    }
+}

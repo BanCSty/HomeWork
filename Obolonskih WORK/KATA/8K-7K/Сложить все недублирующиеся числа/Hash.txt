@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace FUUL_test
+{
+    public static class Kata
+    {
+        public static int Repeats(List<int> source)
+        {
+            var myHash = new HashSet<int>();
+            var tempList = source;
+
+            //finding the duplicates into a list
+            var duplicates = source.Where(item => !myHash.Add(item)).Distinct().ToList();
+
+            //remove all instances of the found duplicate from the list
+            foreach (var item in duplicates)
+            {
+                tempList.RemoveAll(x => x == item);
+            }
+
+            //and just return the sum of the leftover numbers as int.
+            return tempList.Sum(x => Convert.ToInt32(x));
+            //Второй вариант решения
+            //return source.Distinct().Sum() * 2 - source.Sum();
+        }
+        public static void Main()
+        {
+            var arr = new List<int> { 9, 10, 19, 13, 19, 13 };
+            Console.WriteLine(Repeats(arr));
+        }
+    }
+}

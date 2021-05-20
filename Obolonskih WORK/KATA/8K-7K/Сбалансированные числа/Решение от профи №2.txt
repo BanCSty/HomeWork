@@ -1,0 +1,6 @@
+public static string BalancedNumber(int n)
+  {
+    return $"{n}".Take(($"{n}".Length + 1) / 2 - 1).Sum(c => c) == $"{n}".Skip($"{n}".Length / 2 + 1).Sum(c => c)
+        ? "Balanced"
+        : "Not Balanced";
+  }

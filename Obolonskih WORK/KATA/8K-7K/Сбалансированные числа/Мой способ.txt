@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+
+namespace Obolonskih_WORK
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BalanceNum(432);
+           
+        }
+        public static void BalanceNum(int a)
+        {
+            int fResult = 0;
+            int sResult = 0;
+            string test = a.ToString();
+            //Для нечётного числа
+            if (test.Length<=2)
+            {
+                Console.WriteLine("Сбалансированное");
+            }
+            else
+            if (test.Length%2 !=0)
+            {
+                for (int i = 0; i < (test.Length/2); i++)
+                {
+                    char g = test[i];
+
+                    fResult += g - '0'; //преобразует char в int
+                }
+                Console.WriteLine(fResult);
+                for (int i = test.Length/2+1; i < test.Length; i++)
+                {
+                    char s = test[i];
+                    sResult += s - '0';
+                }
+                Console.WriteLine(sResult);
+                if (sResult == fResult)
+                {
+                    Console.WriteLine("Сбалансированное");
+                }
+                else
+                {
+                    Console.WriteLine("Несбалансированное");
+                }
+            }
+            else
+            {
+                Console.WriteLine();
+                for (int i = 0; i < test.Length/2-1; i++)
+                {
+                    char Z = test[i];
+                    fResult += Z - '0';
+                }
+                Console.WriteLine(fResult);
+                for (int i = test.Length/2+1; i < test.Length; i++)
+                {
+                    char Y = test[i];
+                    sResult += Y - '0';
+                }
+                Console.WriteLine(sResult);
+                if (fResult==sResult)
+                {
+                    Console.WriteLine("Сбалансированное");
+                }
+                else
+                {
+                    Console.WriteLine("Несбалансированное");
+                }
+            }
+        }
+    }
+}
+        
+    
+

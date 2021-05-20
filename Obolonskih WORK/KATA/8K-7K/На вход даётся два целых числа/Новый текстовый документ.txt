@@ -1,0 +1,29 @@
+//На вход даётся два целых числа, если числа равны, то вернуть одно из них. В противном случае необходимо провести сложение этих чисел, при этом сложить все остальные числа в их промежутке. 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+
+namespace Obolonskih_WORK
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(GetSum(-1, 2));
+           
+        }
+        public static int GetSum(int a, int b)
+        {
+            int max = Math.Max(a, b),
+                min = Math.Min(a, b),
+                sum = max;
+            for (int i = min; i < max; i++)
+            {
+                sum += i;
+            }
+            return sum;
+        }
+    }
+}

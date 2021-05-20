@@ -1,0 +1,40 @@
+using System;
+using System.Linq;
+
+namespace TEST_FOR_PUBLIC
+{
+    public static class Program
+    {
+        public static int NextId(int[] ids)
+        {
+            int result = 0;
+            for (int i = 0; i < ids.Length; i++)
+            {
+                if(i>ids[i] || i<ids[i])
+                {
+                    result = i;
+                    break;
+                }
+                else
+                {
+                    result = i + 1;
+                }
+            }
+            return result;
+        }
+        static void Main()
+        {
+            //Console.WriteLine("Enter text");
+            //string tex = Console.ReadLine();
+            //Console.WriteLine(Kata.Disemvowel(tex));
+            int[] first = new int[] { 0, 1, 2, 3, 5 };
+            int[] second = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] third = new int[] {9,9,8};
+            Console.WriteLine(NextId(first)); 
+            Console.WriteLine(NextId(second)); 
+            Console.WriteLine(NextId(third)); 
+        }
+    }
+
+}
+
